@@ -8,9 +8,11 @@
 body, html {
     width: 100%;
     height: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font for content */
     background-color: #fff; /* White background */
-    color: #000; /* Black text */
+    color: #595959; /* Sets the default text color to gray */
+    font-size: 14px; /*Font size for content */
+    line-height: 1.5; /*Readability with good line spacing */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,12 +20,18 @@ body, html {
     overflow-x: hidden;
 }
 
-/* Main container to simulate the eleven columns */
+/* Font style for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Professional font for titles */
+    color: #222; /* Dark gray for headings */
+}
+
+/* Keep the grid container */
 .container {
     display: grid;
     width: 100%;
     max-width: 1200px;
-    grid-template-columns: repeat(11, 1fr); /* Create eleven equal columns */
+    grid-template-columns: repeat(11, 1fr); /* Eleven equal columns */
     gap: 20px; /* Space between columns */
 }
 
@@ -84,4 +92,69 @@ a:hover {
         max-width: 70%; /* Adjust image size as needed for mobile */
         margin: 0 auto; /* Center image */
     }
+}
+
+/* Centering the content within the container */
+.container.centered {
+    display: flex; /* Enables flexbox for alignment */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    min-height: 100vh; /* Ensures the container takes up the full viewport height */
+    text-align: center; /* Centers the text inside the container */
+}
+
+/* Styling for links */
+nav a {
+    margin: 0 10px; /* Adds spacing between navigation links */
+    text-decoration: none; /* Removes underline from links */
+    color: #39c; /* Blue link color */
+}
+
+nav a:hover {
+    color: #069; /* Darker blue for hover effect */
+}
+
+/* Styling section content */
+#materials {
+    margin-top: 20px; /* Adds space above the materials section */
+}
+
+#materials h2, #materials h3 {
+    margin-bottom: 10px; /* Adds space below headings */
+}
+
+#materials p {
+    margin-bottom: 15px; /* Adds space below paragraphs */
+}
+
+#materials a {
+    color: #39c; /* Blue link color */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes links stand out */
+}
+
+#materials a:hover {
+    color: #069; /* Changes link color on hover */
+}
+
+
+footer {
+    text-align: center; /* Center-aligns the text */
+    font-size: 12px; /* Keeps the footer font small */
+    color: #595959; /* Matches the content text color */
+    margin-top: 30px; /* Adds space between the main content and the footer */
+    padding: 10px 0; /* Adds padding for comfortable spacing */
+    border-top: 1px solid #e0e0e0; /* Optional: Adds a light border for separation */
+    width: 100%; /* Ensure footer spans the entire width */
+}
+
+
+footer a {
+    color: #39c; /* Blue for the link */
+    text-decoration: none; /* Removes underline for a clean look */
+}
+
+footer a:hover {
+    color: #069; /* Darker blue for hover effect */
 }
