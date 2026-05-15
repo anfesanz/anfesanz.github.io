@@ -4,47 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Sanchez</title>
+    <link rel="stylesheet" href="styleFS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            display: block;
+            height: auto;
+            background: #ffffff;
+            padding: 0;
+        }
+
+        .home-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0;
+            min-height: auto;
+            text-align: left;
+            align-items: stretch;
+            padding: 36px 32px 56px;
+        }
+
+        .hero,
+        .content-card {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #d9e0e6;
+        }
+
+        .hero {
+            padding: 0 0 24px;
+            margin-bottom: 28px;
+            border: 0;
+            border-bottom: 2px solid #005a87;
+        }
+
+        .hero h1 {
+            margin-bottom: 8px;
+        }
+
+        .hero nav {
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        .content-card {
+            padding: 22px 24px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .content-card h2 {
+            margin-bottom: 12px;
+        }
+
+        .content-card p,
+        .content-card li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list,
+        .work-list {
+            padding-left: 20px;
+        }
+
+        .work-list li + li,
+        .contact-list li + li {
+            margin-top: 10px;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .quick-links a {
+            display: inline-block;
+            padding: 8px 0;
+            border: 0;
+            border-bottom: 1px solid transparent;
+            background: transparent;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .quick-links a:hover {
+            border-bottom-color: #005a87;
+            text-decoration: none;
+        }
+
+        .position-line {
+            font-weight: 500;
+            color: #264653;
+        }
+
+        .institution-line {
+            color: #595959;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 0;
+            padding: 0 32px 24px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .home-page {
+                padding: 20px 16px 32px;
+            }
+
+            .hero,
+            .content-card {
+                padding: 18px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 0 0 20px;
+            }
+
+            footer {
+                padding: 0 16px 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Felipe Sanchez</h1>
-    <p>Research Fellow, Mortality & Health Inequalities Group<br>
-       Department of Population Health<br>
-       London School of Hygiene & Tropical Medicine (LSHTM)<br>
-       15–17 Tavistock Place, London WC1H 9SH, United Kingdom
-    </p>
-    <p>Email: <a href="mailto:anfesanz@gmail.com">anfesanz@gmail.com</a></p>
+    <main class="home-page">
+        <header class="hero">
+            <h1>Felipe Sanchez</h1>
+            <nav>
+                <a href="index.html">Home</a> | <a href="teaching.html">Teaching Materials</a>
+            </nav>
+            <p class="position-line">Research Fellow, Mortality &amp; Health Inequalities Group</p>
+            <p class="institution-line">Department of Population Health, London School of Hygiene &amp; Tropical Medicine</p>
+            <p>My research focuses on mortality and fertility forecasting using hierarchical Bayesian models, especially in settings with fragmented or incomplete data. I am interested in how education shapes demographic and health outcomes, and how this can support public policy.</p>
+            <div class="quick-links">
+                <a href="mailto:anfesanz@gmail.com">Email</a>
+                <a href="teaching.html">Teaching Materials</a>
+            </div>
+        </header>
 
-    <h2>Welcome</h2>
-    <p>
-        Hello, I'm Felipe Sanchez, a Research Fellow in the Mortality & Health Inequalities Group at the London School of Hygiene & Tropical Medicine (LSHTM).
-        My research focuses on forecasting mortality and fertility rates using hierarchical Bayesian modeling, particularly in contexts with fragmented or incomplete data.
-        I investigate how education, as a structural determinant, influences demographic and health outcomes.
-        These insights inform evidence-based policymaking in public health, labor markets, and social development.
-    </p>
-    <p><a href="teaching.html">Teaching Materials</a></p>
+        <section class="grid">
+            <article class="content-card">
+                <h2>About</h2>
+                <p>I work on demographic forecasting, mortality inequalities, and Bayesian modeling. My research connects statistical methods with practical questions in public health and social development.</p>
+                <p>I am particularly interested in coherent forecasting across populations and in using incomplete data responsibly for evidence-based decisions.</p>
+            </article>
 
-    <h2>Work in Progress</h2>
-    <ul>
-        <li>Sánchez-Segura, A. F., & Wisniowski, A. Coherent Mortality Forecast in Latin America.</li>
-        <li>Sánchez-Segura, A. F., & Wisniowski, A. A Hierarchical Bayesian Model to Coherently Forecast Mortality by Education in Colombia.</li>
-        <li>
-            Sánchez-Segura, A. F., & Hernandez, G. A. (2020). 
-            <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/505.pdf" target="_blank">
-                <em>Modelo de Gravedad para los flujos de comercio internacional de Colombia</em>
-            </a>. <strong>Archivos de Economía</strong>, 505(1).
-        </li>
-        <li>
-            Hernandez-Diaz, G. A., Cardenas, M. M., & Segura, A. F. S. (2019). 
-            <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/497.pdf" target="_blank">
-                <em>Actualización de la estimación de los indicadores “Razón Precio–Cuenta”</em>
-            </a>. <strong>Archivos de Economía</strong>.
-        </li>
-        <li>
-            Nieto, V. M., Timoté, J. A., Sánchez, A. F., & Villarreal, S. (2015). 
-            <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/434.pdf" target="_blank">
-                <em>La clasificación por tamaño empresarial en Colombia: Historia y limitaciones para una propuesta</em>
-            </a>. <strong>Archivos de Economía</strong>, (434), 1-48.
-        </li>
-    </ul>
+            <aside class="content-card">
+                <h2>Contact</h2>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:anfesanz@gmail.com">anfesanz@gmail.com</a></li>
+                    <li>Department of Population Health</li>
+                    <li>London School of Hygiene &amp; Tropical Medicine</li>
+                    <li>15-17 Tavistock Place, London WC1H 9SH, United Kingdom</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="content-card">
+            <h2>Work in Progress</h2>
+            <ul class="work-list">
+                <li>Sanchez-Segura, A. F., &amp; Wisniowski, A. Coherent Mortality Forecast in Latin America.</li>
+                <li>Sanchez-Segura, A. F., &amp; Wisniowski, A. A Hierarchical Bayesian Model to Coherently Forecast Mortality by Education in Colombia.</li>
+                <li>
+                    Sanchez-Segura, A. F., &amp; Hernandez, G. A. (2020).
+                    <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/505.pdf" target="_blank" rel="noopener noreferrer">
+                        <em>Modelo de Gravedad para los flujos de comercio internacional de Colombia</em>
+                    </a>. <strong>Archivos de Economia</strong>, 505(1).
+                </li>
+                <li>
+                    Hernandez-Diaz, G. A., Cardenas, M. M., &amp; Segura, A. F. S. (2019).
+                    <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/497.pdf" target="_blank" rel="noopener noreferrer">
+                        <em>Actualizacion de la estimacion de los indicadores Razon Precio-Cuenta</em>
+                    </a>. <strong>Archivos de Economia</strong>.
+                </li>
+                <li>
+                    Nieto, V. M., Timote, J. A., Sanchez, A. F., &amp; Villarreal, S. (2015).
+                    <a href="https://colaboracion.dnp.gov.co/CDT/Estudios%20Econmicos/434.pdf" target="_blank" rel="noopener noreferrer">
+                        <em>La clasificacion por tamano empresarial en Colombia: Historia y limitaciones para una propuesta</em>
+                    </a>. <strong>Archivos de Economia</strong>, (434), 1-48.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a> — Theme by Felipe Sanchez
+    </footer>
 </body>
 </html>
