@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="styleFS.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        body, html {
+            display: block;
+            height: auto;
+            background: #f4f6f8;
+            padding: 0;
+        }
+
         .resource-page {
             width: 100%;
-            max-width: 900px;
+            max-width: 980px;
             margin: 0 auto;
+            min-height: auto;
             text-align: left;
             align-items: stretch;
-            min-height: auto;
-            padding: 32px 20px 48px;
+            padding: 40px 20px 56px;
         }
 
         .resource-header,
@@ -23,7 +30,12 @@
         }
 
         .resource-header {
-            margin-bottom: 28px;
+            background: #ffffff;
+            border: 1px solid #dbe3ea;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
         }
 
         .resource-header h1 {
@@ -31,15 +43,16 @@
         }
 
         .resource-header nav {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .resource-block {
-            background: #f8fafc;
-            border: 1px solid #d8e2ea;
-            border-radius: 10px;
-            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #dbe3ea;
+            border-radius: 16px;
+            padding: 24px;
             margin-bottom: 20px;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
         }
 
         .resource-block h2 {
@@ -51,7 +64,8 @@
             margin-bottom: 10px;
         }
 
-        .resource-list {
+        .resource-list,
+        .steps {
             padding-left: 20px;
         }
 
@@ -60,15 +74,33 @@
             margin-top: 10px;
         }
 
-        .steps {
-            padding-left: 20px;
-            margin: 14px 0 18px;
+        .resource-list a {
+            font-weight: 500;
+        }
+
+        .helper-note {
+            background: #eef6ff;
+            border-left: 4px solid #005a87;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0 18px;
+        }
+
+        details {
+            margin-top: 18px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #005a87;
+            margin-bottom: 12px;
         }
 
         pre {
-            background: #ffffff;
-            border: 1px solid #d8e2ea;
-            border-radius: 8px;
+            background: #f8fafc;
+            border: 1px solid #dbe3ea;
+            border-radius: 10px;
             padding: 16px;
             overflow-x: auto;
             white-space: pre-wrap;
@@ -77,16 +109,23 @@
 
         code {
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+        }
+
+        footer {
+            max-width: 980px;
+            margin: 0 auto 24px;
         }
 
         @media (max-width: 768px) {
             .resource-page {
-                padding: 20px 14px 36px;
+                padding: 20px 14px 32px;
             }
 
+            .resource-header,
             .resource-block {
-                padding: 16px;
+                padding: 18px;
+                border-radius: 12px;
             }
         }
     </style>
@@ -98,7 +137,7 @@
             <nav>
                 <a href="index.html">Home</a> | <a href="teaching.html">Teaching Materials</a> | <a href="rr.html">Research Resources</a>
             </nav>
-            <p>Useful links and one simple guide for saving Google Drive previews as a PDF.</p>
+            <p>Useful links for research, references, and a simple Google Drive PDF helper.</p>
         </header>
 
         <section id="resources" class="resource-block">
@@ -154,7 +193,10 @@
 
         <section id="google-drive-preview-downloader" class="resource-block">
             <h2>Save a Google Drive Preview as PDF</h2>
-            <p>Use this when a Google Drive file opens in preview mode and you want to save the visible pages into one PDF.</p>
+            <p>Use this when a Google Drive file opens in preview mode and you want to save all visible pages into one PDF.</p>
+            <div class="helper-note">
+                Open the file in Google Drive, open the browser Console, paste the script, and run it.
+            </div>
             <ol class="steps">
                 <li>Open the file preview in your browser.</li>
                 <li>Open Developer Tools.</li>
@@ -164,7 +206,9 @@
                 <li>Go to the <strong>Console</strong> tab.</li>
                 <li>Paste the script below and run it.</li>
             </ol>
-            <pre><code>(async () =&gt; {
+            <details>
+                <summary>Show the Google Drive console script</summary>
+                <pre><code>(async () =&gt; {
   function wait(ms) {
     return new Promise(resolve =&gt; setTimeout(resolve, ms));
   }
@@ -341,6 +385,7 @@
 
   pdf.save(`all-pages-${pages.length}.pdf`);
 })();</code></pre>
+            </details>
         </section>
     </div>
     <!-- Footer -->
